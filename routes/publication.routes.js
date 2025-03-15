@@ -23,7 +23,7 @@ publicationRouter.get("/detail/:id", checkAuth, detail)
 publicationRouter.delete("/:id", checkAuth, deletePublication)
 
 publicationRouter.get("/user/:id/:page?", checkAuth, userPublications)
-publicationRouter.get("/file/:name", checkAuth, getFile)
+publicationRouter.get("/file/:name", getFile)
 
 publicationRouter.get("/feed/:page?", checkAuth, feed)
 

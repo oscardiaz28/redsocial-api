@@ -23,7 +23,7 @@ userRouter.get("/list/:page?", checkAuth, listUsers)
 
 userRouter.put("/", checkAuth, update)
 userRouter.post("/avatar", [checkAuth, upload.single('avatar')], uploadAvatar)
-userRouter.get("/avatar/:file", checkAuth, showAvatar)
+userRouter.get("/avatar/:file", showAvatar)
 
 userRouter.get("/counters/:username?", checkAuth, counters)
 
