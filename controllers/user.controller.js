@@ -60,9 +60,9 @@ export const login = async ( req, res) => {
         const token = generarJwt({id: user._id, email: user.email})
         res.cookie("token", token, {
             httpOnly: true,
-            sameSite: "strict",
+            sameSite: "none",
             maxAge: 1 * 60 * 60 * 1000,
-            secure: false
+            secure: true
         })
         res.json({
             success: true,
