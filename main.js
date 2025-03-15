@@ -9,12 +9,17 @@ import { userRouter } from './routes/user.routes.js'
 import cookieParser from 'cookie-parser'
 import { followRouter } from './routes/follow.routes.js'
 import { publicationRouter } from './routes/publication.routes.js'
+import cors from 'cors'
 
 const app = express()
 dotenv.config()
 conexionDb()
 
-app.use(corsConfig())
+app.use(cors({
+    origin: "https://redsocial-4x8u.onrender.com",
+    credentials: true
+}));
+
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
