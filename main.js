@@ -15,10 +15,7 @@ const app = express()
 dotenv.config()
 conexionDb()
 
-app.use(cors({
-    origin: "https://redsocial-4x8u.onrender.com",
-    credentials: true
-}));
+app.use(corsConfig());
 
 app.use(morgan('dev'))
 app.use(express.json())
